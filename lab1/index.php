@@ -62,7 +62,7 @@ if (isset($_POST['inputTemp'])) {
     $('.inputForm').submit(function(event) {
       $.ajax({
         type: 'post',
-        url: "post.php",
+        url: "index.php",
         data: $(".inputForm").serializeArray()
       })
         .done(function(data) {

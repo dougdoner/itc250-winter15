@@ -5,19 +5,29 @@
     Author: Douglas Doner
     Date: 1/21/2015
 */
+//if the request is not empty
 if (($_POST)) {
+    //if the index of toppings is not empty in the $_POST super global object
     if (!empty($_POST["toppings"])) {
+        //assign the array to the variable name "$toppingsArray"
         $toppingsArray = $_POST["toppings"];
-
+        
+        //handler for if the size of the array is larger than 1 (for adding the and to the string and using array.implode)
         if (count($_POST["toppings"]) > 1) {
+            //store the value of the last index of $toppingsArray in the variable named "$lastArrayValue"
             $lastArrayValue = end($toppingsArray);
-
+            
+            //count gives you the total number of indexes in the array. I use this later on with unset
             $lastArrayIndex = count($toppingsArray) - 1;
+            //unsets the last index in the array
             unset($toppingsArray[$lastArrayIndex]);
+            //puts a comma and a space after every array value except the last value, then concatonates the values into a string
             $outputToppings = implode(", ", $toppingsArray);
-
+            
+            //Now the last value of the array is added onto the end of the string behind the string value " and "
             $outputToppings = $outputToppings . " and " . $lastArrayValue;
-
+            
+            //returns the string to the ajax query
             echo "Your toppings: " . $outputToppings;
             die;
 

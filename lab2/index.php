@@ -6,7 +6,7 @@
     Date: 1/21/2015
 */
 //if the request is not empty
-if (($_POST)) {
+if ($_POST) {
     //if the index of toppings is not empty in the $_POST super global object
     if (!empty($_POST["toppings"])) {
         //assign the array to the variable name "$toppingsArray"

@@ -32,6 +32,7 @@ if (($_POST)) {
             die;
 
         } else {
+            //if the size of the array is not greater than 1, the one value of the array is returned
             echo "Toppings: " . $toppingsArray [0];
             die;
         }

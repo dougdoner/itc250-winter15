@@ -2,7 +2,6 @@ function displayJSON(jsonObj)
 {
     //parses the JSON object into a JavaScript array
     var obj = JSON.parse(jsonObj);
-    console.log(obj);
     var tBody = $('.displayTable tbody');
     tBody.empty();
     for (var i = 0; i < obj.length; i++)
